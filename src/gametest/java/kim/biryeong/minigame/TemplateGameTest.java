@@ -8,7 +8,8 @@ import net.minecraft.network.chat.Component;
 public final class TemplateGameTest {
     @GameTest
     public void templateAndLibrariesLoadOnDedicatedServer(GameTestHelper context) {
-        for (String id : new String[]{MinigameTemplate.MOD_ID, "polymer-core", "sgui", "bil", "apel", "minigamelib"}) {
+        for (String id : new String[]{MinigameTemplate.MOD_ID, "polymer-core", "sgui", "bil", "apel", "minigamelib",
+                "gcb-server", "fabric-permissions-api-v0"}) {
             if (!FabricLoader.getInstance().isModLoaded(id)) {
                 context.fail(Component.literal("Required mod was not loaded: " + id));
                 return;
