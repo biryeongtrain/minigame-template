@@ -28,8 +28,8 @@
     "placeholder-api": ">=3.2.0+26.3",
     "sidebar-api": ">=0.6.0+26.1",
     "factorytools": ">=0.12.1+26.3",
-    "minigamelib": ">=1.0.2+26.3",
-    "gcb-server": ">=1.2.0+26.3",
+    "minigamelib": ">=2.1.0+26.3",
+    "gcb-server": ">=1.2.1+26.3",
     "fabric-permissions-api-v0": ">=0.7.0",
     "apel": "=0.1.5+26.3"
   }

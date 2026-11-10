@@ -82,8 +82,8 @@ dependencies {
     implementation include("de.tomalbrc:blockbench-import-library:${project.bli_version}")
     implementation include("me.lucko:fabric-permissions-api:0.7.0")
     implementation include("eu.pb4:placeholder-api:3.2.0+26.3")
-    implementation include("kim.biryeong:minigame-lib:1.0.2+26.3")
-    implementation include("kim.biryeong:GCB-server:1.2.0+26.3")
+    implementation include("kim.biryeong:minigame-lib:2.1.0+26.3")
+    implementation include("kim.biryeong:GCB-server:1.2.1+26.3")
     implementation include("eu.pb4:player-data-api:0.11.0+26.2")
     implementation("com.teamresourceful.resourcefullib:resourcefullib-fabric-26.3:${project.resourceful_lib_version}") {
         transitive = false

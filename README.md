@@ -10,8 +10,8 @@ Semion TD의 라이브러리 구성을 Minecraft 26.3으로 포팅한 서버 전
 | Java | 25 |
 | Gradle Wrapper | 9.7.1 |
 | Fabric Loom | 1.18.2 (`net.fabricmc.fabric-loom`) |
-| Fabric Loader | 0.19.5 |
-| Fabric API | 0.161.0+26.3 |
+| Fabric Loader | 0.20.1 |
+| Fabric API | 0.164.0+26.3 |
 | 매핑 | 비난독화 Minecraft, 별도 매핑 의존성 없음 |
 
 Java 25를 설치하고 `JAVA_HOME`을 해당 JDK로 설정한다. Gradle은 포함된 Wrapper로 실행한다.
@@ -32,13 +32,15 @@ Windows에서는 `gradlew.bat`를 사용한다. 배포용 JAR은 `build/libs/min
 
 이 템플릿은 `environment: server`다. 클라이언트 화면이나 바닐라 클라이언트 접속 검증은 포함하지 않는다.
 
+2026-11-11 최신 버전 반영 검증: minigame-lib 2.1.0+26.3, GCB-server 1.2.1+26.3, Fabric Loader 0.20.1, Fabric API 0.164.0+26.3, Polymer 0.18.4+26.3으로 `./gradlew --refresh-dependencies build`(JUnit, GameTest 필수 2개 포함)가 성공했다. 클라이언트 접속·렌더링은 검증하지 않았다.
+
 2026-09-29 포팅 검증: `test runGameTest build` 성공(JUnit 1개, 필수 GameTest 2개). 배포 JAR과 외부 필수 모드만 설치한 별도 Minecraft 26.3 서버에서도 시작과 `polymer generate-pack` 성공을 확인했다. JAR의 Java 바이트코드 버전은 69(Java 25)이며, 중첩 JAR까지 49개 아카이브에서 기존 `net/minecraft/class_*` 참조는 발견되지 않았다. 클라이언트 접속·렌더링과 각 라이브러리의 모든 기능은 검증하지 않았다.
 
 ## 라이브러리
 
 2026-09-24의 `steve-td` / `s3-release` 구성(기준 커밋 `d35a4b3502e086a4d62b9df14da5ff511f23233a`)에서 출발해 26.3 호환 버전으로 갱신했다. 기존 JAR 포함 방식은 유지하며, BIL에 필요한 Permissions API를 추가로 포함한다.
 
-`repo.biryeong.kim/releases`에서 `kim.biryeong:minigame-lib:1.0.2+26.3`, `kim.biryeong:GCB-server:1.2.0+26.3`, `net.mcbrincie.apel:apel:0.1.5+26.3`을 사용한다. GCB-server는 Packet Tweaker를 더 이상 포함하지 않는다.
+`repo.biryeong.kim/releases`에서 `kim.biryeong:minigame-lib:2.1.0+26.3`, `kim.biryeong:GCB-server:1.2.1+26.3`, `net.mcbrincie.apel:apel:0.1.5+26.3`을 사용한다. GCB-server는 Packet Tweaker를 더 이상 포함하지 않는다.
 
 BIL `2.2.0+26.3-rc-3`은 공식 GitHub Releases에서 가져온다. RC 표기 빌드를 명시적으로 사용하며, 정식 Minecraft 26.3에서 검증한다. 이 JAR에 빠진 `me.lucko:fabric-permissions-api:0.7.0`은 별도로 포함한다. 일부 라이브러리는 26.1·26.2 표기 버전을 사용한다. 이전 조사 근거는 [의존성 조사](docs/26.3-dependency-audit.md)에 기록했다.
 
